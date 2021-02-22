@@ -5,6 +5,7 @@ WIDTH = 1200
 HEIGHT = 800
 TILE = 100
 FPS = 60
+FPS_POS = WIDTH - 65, 5
 
 # player
 player_pos = (WIDTH // 2, HEIGHT // 2)
@@ -19,6 +20,8 @@ GREEN = 0, 255, 0
 BLUE = 0, 0, 255
 WHITE = 255, 255, 255
 AMETHYST = 100, 0, 255
+SKYBLUE = 0, 186, 255
+DARKGREY = 40, 40, 40
 YELLOW = 255, 255, 0
 
 # raycasting

@@ -1,12 +1,13 @@
 import pygame
 from settings import *
 from player import Player
-from raycasting import raycasting
+from drawing import Drawing
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 player = Player()
 clock = pygame.time.Clock()
+drawing = Drawing(screen)
 
 while True:
     for event in pygame.event.get():
@@ -18,10 +19,9 @@ while True:
 
     # drawing
     screen.fill(BLACK)
-    pygame.draw.rect(screen, AMETHYST, (0, 0, WIDTH, HEIGHT // 2))  # fill sky
-    pygame.draw.rect(screen, YELLOW, (0, HEIGHT // 2, WIDTH, HEIGHT // 2))  # fill ground
-    raycasting(screen, player.pos, player.angle)
+    drawing.backgroung()
+    drawing.world(player.pos, player.angle)
+    drawing.fps(clock)
 
-    print(str(int(clock.get_fps())))
     pygame.display.flip()
-    clock.tick(FPS)
+    clock.tick(60)
