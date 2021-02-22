@@ -1,6 +1,5 @@
 import pygame
 from settings import *
-from map import world_map
 from player import Player
 from raycasting import raycasting
 
@@ -19,11 +18,9 @@ while True:
 
     # drawing
     screen.fill(BLACK)
-    pygame.draw.circle(screen, GREEN, player.pos, 12)
+    pygame.draw.rect(screen, AMETHYST, (0, 0, WIDTH, HEIGHT // 2))  # fill sky
+    pygame.draw.rect(screen, YELLOW, (0, HEIGHT // 2, WIDTH, HEIGHT // 2))  # fill ground
     raycasting(screen, player.pos, player.angle)
-
-    for x, y in world_map:
-        pygame.draw.rect(screen, WHITE, (x, y, TILE, TILE), 2)
 
     print(str(int(clock.get_fps())))
     pygame.display.flip()

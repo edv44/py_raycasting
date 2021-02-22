@@ -1,5 +1,4 @@
 import pygame
-import math
 from settings import *
 from map import world_map
 
@@ -17,6 +16,10 @@ def raycasting(screen, player_pos, player_angle):
             y = yo + depth * sina
 
             if (x // TILE * TILE, y // TILE * TILE) in world_map:
-                pygame.draw.line(screen, RED, player_pos, (x, y), 2)
+                depth *= math.cos(player_angle - cur_angle)  # removing "fish eye"
+                proj_height = PROJ_COEFF / depth
+                c = 255 / (1 + depth * depth * 0.0001)
+                color = (c, c, c)
+                pygame.draw.rect(screen, color, (ray * SCALE, (HEIGHT - proj_height) // 2, SCALE, proj_height))
                 break
         cur_angle += DELTA_ANGLE
