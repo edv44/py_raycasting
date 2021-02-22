@@ -25,5 +25,6 @@ while True:
     for x, y in world_map:
         pygame.draw.rect(screen, WHITE, (x, y, TILE, TILE), 2)
 
+    print(str(int(clock.get_fps())))
     pygame.display.flip()
     clock.tick(FPS)

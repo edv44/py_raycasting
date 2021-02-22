@@ -13,38 +13,23 @@ class Player:
         return self.x, self.y
 
     def movement(self):
-        sin = math.sin(self.angle)
-        cos = math.cos(self.angle)
+        sina = math.sin(self.angle)
+        cosa = math.cos(self.angle)
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_w]:
-            self.x += player_speed * cos
-            self.y += player_speed * sin
+            self.x += player_speed * cosa
+            self.y += player_speed * sina
         if keys[pygame.K_s]:
-            self.x -= player_speed * cos
-            self.y -= player_speed * sin
+            self.x -= player_speed * cosa
+            self.y -= player_speed * sina
         if keys[pygame.K_a]:
-            self.x += player_speed * sin
-            self.y -= player_speed * cos
+            self.x += player_speed * sina
+            self.y -= player_speed * cosa
         if keys[pygame.K_d]:
-            self.x -= player_speed * sin
-            self.y += player_speed * cos
+            self.x -= player_speed * sina
+            self.y += player_speed * cosa
         if keys[pygame.K_RIGHT]:
             self.angle += player_angle_speed
-            print(self.angle)
         if keys[pygame.K_LEFT]:
             self.angle -= player_angle_speed
-
-            # keys = pygame.key.get_pressed()
-            # if keys[pygame.K_w]:
-            #         self.y -= player_speed
-            # if keys[pygame.K_s]:
-            #         self.y += player_speed
-            # if keys[pygame.K_a]:
-            #         self.x -= player_speed
-            # if keys[pygame.K_d]:
-            #         self.x += player_speed
-            # if keys[pygame.K_RIGHT]:
-            #         self.angle += player_angle_speed
-            # if keys[pygame.K_LEFT]:
-            #         self.angle -= player_angle_speed

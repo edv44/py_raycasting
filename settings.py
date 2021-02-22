@@ -20,7 +20,8 @@ BLUE = 0, 0, 255
 WHITE = 255, 255, 255
 
 # raycasting
+MAX_DEPTH = 800
 FOV = math.pi / 3
 HALF_FOV = FOV / 2
-NUM_RAYS = 10
+NUM_RAYS = 100
 DELTA_ANGLE = FOV / NUM_RAYS
