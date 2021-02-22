@@ -10,7 +10,7 @@ FPS_POS = WIDTH - 65, 5
 # player
 player_pos = (WIDTH // 2, HEIGHT // 2)
 player_angle = 0
-player_speed = 5
+player_speed = 3
 player_angle_speed = 0.05
 
 # colors
@@ -28,10 +28,10 @@ YELLOW = 255, 255, 0
 MAX_DEPTH = 800
 FOV = math.pi / 3
 HALF_FOV = FOV / 2
-NUM_RAYS = 100
+NUM_RAYS = 300
 DELTA_ANGLE = FOV / NUM_RAYS
 
 # 2.5d
 DIST = NUM_RAYS / (2 * math.tan(HALF_FOV))
-PROJ_COEFF = 3 * DIST * TILE
+PROJ_COEFF = DIST * TILE
 SCALE = WIDTH // NUM_RAYS
